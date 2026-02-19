@@ -94,3 +94,114 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* 1. Basic Reset & Fonts */
+* {
+  box-sizing: border-box; /* Ensures padding doesn't break our widths */
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 2. Centering the Content (The Old School Way) */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto; /* This centers the whole block */
+  background: white;
+  padding: 30px;
+  border-radius: 15px; /* Requirement: border-radius */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Requirement: box-shadow */
+}
+
+/* 3. Navigation (No Flexbox!) */
+.top-header {
+  background-color: #2d5a27;
+  padding: 15px 0;
+  text-align: center; /* Centers the links inside */
+}
+
+.main-nav ul {
+  list-style-type: none;
+}
+
+.main-nav li {
+  display: inline-block; /* Makes them sit side-by-side */
+  margin: 0 20px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+/* Pseudo-classes (Requirement) */
+.main-nav a:hover {
+  background-color: #4a7c44;
+  border-radius: 5px;
+}
+
+.main-nav a:active {
+  background-color: #1e3d1a;
+}
+
+/* 4. About Section Layout */
+.about-section {
+  overflow: auto; /* Clears the floats inside */
+  padding: 20px 0;
+}
+
+.profile-pic {
+  width: 300px;
+  float: left; /* Old school positioning! */
+  margin-right: 30px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
+
+.about-text h1 {
+  margin-bottom: 20px;
+  color: #2d5a27;
+}
+
+.cta-button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #2d5a27;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+  background-color: #3e7a37;
+  transform: translateY(-2px); /* Makes it pop a little */
+}
+.contact-section {
+  margin-top: 40px;
+  padding: 60px 20px;
+  /* Requirement: CSS Background Image */
+  background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.9); /* See-through white */
+  display: inline-block; /* Keeps it from stretching full width */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
