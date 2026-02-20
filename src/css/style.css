@@ -1,258 +1,99 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-/* 1. Basic Reset & Fonts */
-* {
-  box-sizing: border-box; /* Ensures padding doesn't break our widths */
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-  background-color: #f4f7f6;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* 2. Centering the Content (The Old School Way) */
 .container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 40px auto; /* This centers the whole block */
-  background: white;
-  padding: 30px;
-  border-radius: 15px; /* Requirement: border-radius */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Requirement: box-shadow */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* 3. Navigation (No Flexbox!) */
-.top-header {
-  background-color: #2d5a27;
-  padding: 15px 0;
-  text-align: center; /* Centers the links inside */
-}
-
+/* --- Navigation --- */
 .main-nav ul {
-  list-style-type: none;
-}
-
-.main-nav li {
-  display: inline-block; /* Makes them sit side-by-side */
-  margin: 0 20px;
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    background: #ffffff;
+    padding: 1rem 2rem;
+    margin: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .main-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px 15px;
-  transition: 0.3s;
-}
-
-/* Pseudo-classes (Requirement) */
-.main-nav a:hover {
-  background-color: #4a7c44;
-  border-radius: 5px;
-}
-
-.main-nav a:active {
-  background-color: #1e3d1a;
-}
-
-/* 4. About Section Layout */
-.about-section {
-  overflow: auto; /* Clears the floats inside */
-  padding: 20px 0;
-}
-
-.profile-pic {
-  width: 300px;
-  float: left; /* Old school positioning! */
-  margin-right: 30px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-}
-
-.about-text h1 {
-  margin-bottom: 20px;
-  color: #2d5a27;
-}
-
-.cta-button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background-color: #2d5a27;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.cta-button:hover {
-  background-color: #3e7a37;
-  transform: translateY(-2px); /* Makes it pop a little */
-}
-.contact-section {
-  margin-top: 40px;
-  padding: 60px 20px;
-  /* Requirement: CSS Background Image */
-  background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1000&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
-  text-align: center;
-}
-
-.contact-card {
-  background: rgba(255, 255, 255, 0.9); /* See-through white */
-  display: inline-block; /* Keeps it from stretching full width */
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-
-}
-
-/* Task 1: Absolute Positioning Logic */
-
-.about-section {
-  position: relative; /* This acts as the anchor for absolute children */
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-}
-
-.absolute-heart {
-  position: absolute; /* Detached from normal flow */
-  top: 10px;          /* Positioned 10px from the top of about-section */
-  left: 10px;         /* Positioned 10px from the left of about-section */
-  background: white;
-  padding: 10px;
-  border-radius: 50%;
-  font-size: 24px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 10;        /* Makes sure it stays on top */
-}
-
-/* Base navigation styles to make it look clean */
-.main-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 15px;
-  background: #f4f4f4;
-  padding: 1rem;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 0.5rem;
 }
 
 .main-nav a.active {
-  color: #27ae60;
+    color: #27ae60;
+    border-bottom: 2px solid #27ae60;
 }
 
+/* --- Task 1: Absolute Positioning --- */
+.about-section {
+    position: relative; /* This acts as the anchor */
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-pic {
+    max-width: 200px;
+    border-radius: 8px;
+}
+
+.absolute-heart {
+    position: absolute; /* Detached from normal flow */
+    top: 10px;
+    left: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.contact-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- Buttons --- */
+.cta-button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.cta-button:hover {
+    background-color: #219653;
+}
+
+/* --- BMI Calculator --- */
 .calculator-box {
-    background: #f9f9f9;
+    background: white;
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
     max-width: 400px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .input-group {
@@ -262,6 +103,7 @@ body {
 .input-group label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .input-group input {
@@ -269,18 +111,34 @@ body {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+#result-container {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 400px;
+    border: 1px solid #c8e6c9;
 }
 
 #bmi-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 #bmi-table th, #bmi-table td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
+}
+
+#bmi-table th {
+    background-color: #f4f4f4;
 }
 
 .hidden {

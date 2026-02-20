@@ -6,18 +6,17 @@ document.getElementById('calculate-btn').addEventListener('click', function() {
     const analysisText = document.getElementById('bmi-analysis');
 
     if (height > 0 && weight > 0) {
-        // BMI Formula: weight (kg) / (height (m) * height (m))
         const heightInMeters = height / 100;
         const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
 
-        // Show the result
         bmiValueSpan.textContent = bmi;
         resultContainer.classList.remove('hidden');
 
-        // Reset table highlights
-        document.querySelectorAll('tr').forEach(tr => tr.style.backgroundColor = "");
+        // Reset the background color of all table rows first
+        document.querySelectorAll('#bmi-table tbody tr').forEach(tr => {
+            tr.style.backgroundColor = "";
+        });
 
-        // Analysis & Highlighting logic
         let message = "";
         let rowId = "";
 
@@ -36,7 +35,8 @@ document.getElementById('calculate-btn').addEventListener('click', function() {
         }
 
         analysisText.textContent = message;
-        document.getElementById(rowId).style.backgroundColor = "#d4edda"; // Highlight row green
+        // Highlight the correct row with a soft green color
+        document.getElementById(rowId).style.backgroundColor = "#d4edda"; 
     } else {
         alert("Please enter valid height and weight!");
     }

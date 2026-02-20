@@ -8,11 +8,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),         // Etusivu
-        nested: resolve(__dirname, 'bmi/index.html'),   // BMI-sivu
+        main: resolve(__dirname, 'index.html'),
+        nested: resolve(__dirname, 'bmi/index.html'),
       },
     },
   },
-  // Public base path
-  base: './',
+  base: './', /* This ensures Vite uses relative paths for assets */
 });
