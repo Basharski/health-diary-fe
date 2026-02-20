@@ -204,4 +204,85 @@ body {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+}
+
+/* Task 1: Absolute Positioning Logic */
+
+.about-section {
+  position: relative; /* This acts as the anchor for absolute children */
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.absolute-heart {
+  position: absolute; /* Detached from normal flow */
+  top: 10px;          /* Positioned 10px from the top of about-section */
+  left: 10px;         /* Positioned 10px from the left of about-section */
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 10;        /* Makes sure it stays on top */
+}
+
+/* Base navigation styles to make it look clean */
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  background: #f4f4f4;
+  padding: 1rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.main-nav a.active {
+  color: #27ae60;
+}
+
+.calculator-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#bmi-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#bmi-table th, #bmi-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
 }

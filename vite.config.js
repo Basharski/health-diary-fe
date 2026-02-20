@@ -1,5 +1,18 @@
-export default {
-  // This makes all links relative (./) instead of absolute (/)
-  // It's the "magic fix" for school servers and subfolders
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'vite';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),         // Etusivu
+        nested: resolve(__dirname, 'bmi/index.html'),   // BMI-sivu
+      },
+    },
+  },
+  // Public base path
   base: './',
-};
+});
